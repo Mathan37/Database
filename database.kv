@@ -1,0 +1,39 @@
+Manager:
+	Screen:
+		BoxLayout:
+			orientation: "vertical"
+			GridLayout:
+				cols: 1
+				Image:
+					id: img
+					source: "img1.jpg"
+				TextInput:
+					text: ""
+					id : json
+					size_hint_y : .2
+				GridLayout:
+					cols : 2
+					Button:
+						pos: 100,100
+						text: "Patch"
+						size_hint: 1,.2
+						background_normal: "img1.jpg"
+						background_down: "img1.jpg"
+						on_release: app.patch(json.text)
+					Button:
+						text: "Post"
+						on_release: app.post(json.text)
+					Button:
+						text: "Put"
+						on_release: app.delete(json.text)
+					Button:
+						text: "Put"
+						on_release: app.put(json.text)
+					Button:
+						text: "Get"
+						on_release: app.get()
+					Button:
+						text: "Store Image"
+						on_release: app.img_storage()
+					
+		
